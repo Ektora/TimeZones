@@ -1,5 +1,8 @@
-<h2>Első időzóna:</h2>
-<app-timezones [melyikIdoZona] = "idoZona1" [aktualisIdoZona] = "aktualisIdoZona1" (aktualisIdoZonaValtozas) = "aktualisIdoZonaValtozott($event)"></app-timezones>
 
-<h2>Második időzóna:</h2>
-<app-timezones [melyikIdoZona] = "idoZona2" [aktualisIdoZona] = "aktualisIdoZona2" (aktualisIdoZonaValtozas) = "aktualisIdoZonaValtozott($event)"></app-timezones>
+<h1>Timezones</h1>
+<app-timezones *ngFor="let iz of idoZonak; let i = index" [melyikIdoZona] = "iz.idoZona" [aktualisIdoZona] = "iz.aktualisIdoZona" (aktualisIdoZonaValtozas) = "aktualisIdoZonaValtozott($event, i)"></app-timezones>
+<!---
+<app-timezones [melyikIdoZona] = "idoZonak[0].idoZona" [aktualisIdoZona] = "idoZonak[0].aktualisIdoZona" (aktualisIdoZonaValtozas) = "aktualisIdoZonaValtozott($event)"></app-timezones>
+<app-timezones [melyikIdoZona] = "idoZonak[1].idoZona" [aktualisIdoZona] = "idoZonak[1].aktualisIdoZona" (aktualisIdoZonaValtozas) = "aktualisIdoZonaValtozott($event)"></app-timezones>
+-->
+<button (click) = "ujIdoZonaHozzaAdasa()" *ngIf="!maximum">Új időzóna hozzáadása</button>

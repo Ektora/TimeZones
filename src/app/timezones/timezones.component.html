@@ -1,4 +1,6 @@
-<p>{{jelenlegiIdoZona()}}{{melyikIdoZona}} </p>
-<p>{{pontosIdo}}</p>
+<div class="timeZone" [class.currentTimeZone] = "aktualisIdoZona">
+<input [(ngModel)]="melyikIdoZona">
+<p>{{pontosIdo | date : 'HH:mm:ss'}}</p>
 <button (click)="aktualisIdo()">Frissítés</button>
 <button [disabled]="aktualisIdoZona" (click)="aktualisnakJelol()">Jelenleginek jelöl</button>
+</div>

@@ -22,14 +22,8 @@ export class TimezonesComponent implements OnInit {
   }
 
  aktualisIdo() {
-    this.pontosIdo = new Date().toLocaleDateString("en-US", {timeZone : this.melyikIdoZona, weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' , hour: 'numeric', minute: 'numeric', second: 'numeric'});
-  }
-  
-
-  jelenlegiIdoZona(){
-    if(this.aktualisIdoZona)
-      return "Jelenlegi időzóna: ";
-    return "";
+    if(this.melyikIdoZona!='')
+      this.pontosIdo = new Date().toLocaleDateString("en-US", {timeZone : this.melyikIdoZona, weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' , hour: 'numeric', minute: 'numeric', second: 'numeric'});
   }
 
   aktualisnakJelol(){
